@@ -1,6 +1,7 @@
 public class Symbol implements Sentence {
 	
 	protected String name;
+	protected boolean value; //added
 
 	public Symbol(String name) {
 		super();
