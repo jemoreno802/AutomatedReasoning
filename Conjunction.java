@@ -10,6 +10,8 @@ public class Conjunction extends BinaryCompoundSentence {
 	 * That is, if both its arguments are satisfied by the Model.
 	 */
 	public boolean isSatisfiedBy(Model model) {
+		System.out.println(lhs.toString());
+		System.out.println(rhs.toString());
 		return lhs.isSatisfiedBy(model) && rhs.isSatisfiedBy(model);
 	}
 

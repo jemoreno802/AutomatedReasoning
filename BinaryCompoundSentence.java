@@ -2,6 +2,12 @@
 
 abstract public class BinaryCompoundSentence extends CompoundSentence {
 
+	public enum BinaryConnective {
+		
+		AND, OR, IMPLIES, IFF
+
+	}
+	
 	protected BinaryConnective connective;
 	protected Sentence lhs;
 	protected Sentence rhs;

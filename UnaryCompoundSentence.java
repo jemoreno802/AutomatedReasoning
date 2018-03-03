@@ -2,6 +2,11 @@
 
 abstract public class UnaryCompoundSentence extends CompoundSentence {
 	
+	
+	public enum UnaryConnective{
+		NOT
+	}
+	
 	protected UnaryConnective connective;
 	protected Sentence argument;
 

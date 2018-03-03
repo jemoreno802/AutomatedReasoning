@@ -15,19 +15,13 @@ public class ModusPonensKB extends KB{
 	}
 	
 	public void checkModels() {
-		Collection<Sentence> S = sentences();
-		Collection<Symbol> sym = symbols();
-		check.symbols = sym;
-		
-		for(Symbol x: sym) {
-			check.set(x, true);
-		}
-		check.dump();
+		//Negation n = new Negation(intern("Q"));
+		System.out.println(check.entails(this, intern("Q")));
 		
 	}
 	
 	public static void main(String[] argv) {
-		new ModusPonensKB().dump();
+		//new ModusPonensKB().dump();
 		new ModusPonensKB().checkModels();
 	}
 }

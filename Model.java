@@ -2,13 +2,15 @@
  * A Model is an assignment of boolean values (true or false) to
  * PropositionalSymbols.
  */
+import java.util.HashMap;
 public interface Model {
 
+	HashMap<Symbol, Boolean> model = new HashMap<Symbol, Boolean>();
 	/**
 	 * Set the value assigned to the given PropositionSymbol in this
 	 * Model to the given boolean VALUE.
 	 */
-	public void set(Symbol sym, boolean value);
+	public Model set(Symbol sym, boolean value);
 
 	/**
 	 * Returns the boolean value associated with the given PropositionalSymbol

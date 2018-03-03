@@ -1,7 +1,7 @@
 
 
 public class WumpusWorldKB extends KB {
-	
+	ModelChecking check = new ModelChecking();
 	public WumpusWorldKB() {
 		super();
 		Symbol p11 = intern("P1,1");
@@ -17,10 +17,16 @@ public class WumpusWorldKB extends KB {
 		add(new Biconditional(b21, new Disjunction(p12, new Disjunction(p22, p31))));
 		add(new Negation(b11));
 		add(b21);
+		
+		
 	}
-
+	public void checkModels() {
+		Negation not = new Negation(intern("P1,2"));
+		System.out.println(check.entails(this, intern("P1,2")));
+	}
 	public static void main(String[] argv) {
-		new WumpusWorldKB().dump();
+		//new WumpusWorldKB().dump();
+		new WumpusWorldKB().checkModels();
 	}
 
 }
