@@ -10,7 +10,8 @@ public interface Model {
 	 * Set the value assigned to the given PropositionSymbol in this
 	 * Model to the given boolean VALUE.
 	 */
-	public Model set(Symbol sym, boolean value);
+	
+	public Model set(Symbol sym, boolean value, Model m);
 
 	/**
 	 * Returns the boolean value associated with the given PropositionalSymbol
@@ -21,12 +22,12 @@ public interface Model {
 	/**
 	 * Return true if this Model satisfies (makes true) the given KB.
 	 */
-	public boolean satisfies(KB kb);
+	public boolean satisfies(KB kb, Model m);
 
 	/**
 	 * Return true if this Model satisfies (makes true) the given Sentence.
 	 */
-	public boolean satisfies(Sentence sentence);
+	public boolean satisfies(Sentence sentence,Model m);
 	
 	/**
 	 * Print the assignments in this Model to System.out.

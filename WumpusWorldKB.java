@@ -1,7 +1,7 @@
 
 
 public class WumpusWorldKB extends KB {
-	ModelChecking check = new ModelChecking();
+	Prover prove = new Prover();
 	public WumpusWorldKB() {
 		super();
 		Symbol p11 = intern("P1,1");
@@ -22,11 +22,8 @@ public class WumpusWorldKB extends KB {
 	}
 	public void checkModels() {
 		Negation not = new Negation(intern("P1,2"));
-		System.out.println(check.entails(this, intern("P1,2")));
+		System.out.println("KB entails P1,2: " + prove.entails(this, intern("P1,2")));
 	}
-	public static void main(String[] argv) {
-		//new WumpusWorldKB().dump();
-		new WumpusWorldKB().checkModels();
-	}
+	
 
 }

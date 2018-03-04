@@ -3,7 +3,8 @@ import java.util.Collection;
 
 
 public class ModusPonensKB extends KB{
-	ModelChecking check = new ModelChecking();
+	//ModelChecking check = new ModelChecking();
+	Prover prove = new Prover();
 	
 	public ModusPonensKB() {
 		super();
@@ -15,13 +16,10 @@ public class ModusPonensKB extends KB{
 	}
 	
 	public void checkModels() {
-		//Negation n = new Negation(intern("Q"));
-		System.out.println(check.entails(this, intern("Q")));
+		Negation n = new Negation(intern("Q"));
+		//System.out.println("KB entails Q: " + prove.entails(this, n));
+
+		System.out.println("KB entails Q: " + prove.entails(this, intern("Q")));
 		
-	}
-	
-	public static void main(String[] argv) {
-		//new ModusPonensKB().dump();
-		new ModusPonensKB().checkModels();
 	}
 }
