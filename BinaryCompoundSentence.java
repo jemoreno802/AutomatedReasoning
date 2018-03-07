@@ -2,11 +2,11 @@
 
 abstract public class BinaryCompoundSentence extends CompoundSentence {
 
-	public enum BinaryConnective {
+	/*public enum BinaryConnective {
 		
 		AND, OR, IMPLIES, IFF
 
-	}
+	}*/
 	
 	protected BinaryConnective connective;
 	protected Sentence lhs;
@@ -20,7 +20,7 @@ abstract public class BinaryCompoundSentence extends CompoundSentence {
 	}
 
 	public BinaryConnective getConnective() {
-		return connective;
+		return this.connective;
 	}
 
 	public Sentence getLhs() {

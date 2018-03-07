@@ -1,6 +1,8 @@
 
 public class HornClausesKB extends KB{
 	Prover prove = new Prover();
+	ResolutionProof r = new ResolutionProof();
+
 	public HornClausesKB() {
 			super();
 			Symbol my = intern("My"); //Is mythical?
@@ -15,9 +17,16 @@ public class HornClausesKB extends KB{
 			add(new Implication (h, mag)); //If horned then it's magical
 	}
 	
+	public void checkResolution() {
+		System.out.println("Unicorn is mythical:" + r.checkResolution(this, intern("My")));
+		System.out.println("Unicorn is magical:" + r.checkResolution(this, intern("Mag")));
+		System.out.println("Unicorn is horned:" + r.checkResolution(this, intern("H")));
+
+	}
+	
 	public void checkModels() {
 		System.out.println("KB entails(Unicorn is Mythical): " + prove.entails(this, intern("My")));
-		System.out.println("KB entails(Unicorn is Horned): " + prove.entails(this, intern("Mag") ));
+		System.out.println("KB entails(Unicorn is Magical): " + prove.entails(this, intern("Mag") ));
 		System.out.println("KB entails (Unicorn is Horned): " + prove.entails(this, intern("H") ));
 	} 
 	

@@ -2,11 +2,11 @@
 
 abstract public class UnaryCompoundSentence extends CompoundSentence {
 	
-	
+	/*
 	public enum UnaryConnective{
 		NOT
 	}
-	
+	*/
 	protected UnaryConnective connective;
 	protected Sentence argument;
 
@@ -17,7 +17,7 @@ abstract public class UnaryCompoundSentence extends CompoundSentence {
 	}
 	
 	public UnaryConnective getConnective() {
-		return connective;
+		return this.connective;
 	}
 
 	public Sentence getArgument() {

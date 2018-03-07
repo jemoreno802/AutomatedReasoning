@@ -2,6 +2,8 @@
 
 public class WumpusWorldKB extends KB {
 	Prover prove = new Prover();
+	ResolutionProof r = new ResolutionProof();
+
 	public WumpusWorldKB() {
 		super();
 		Symbol p11 = intern("P1,1");
@@ -20,6 +22,11 @@ public class WumpusWorldKB extends KB {
 		
 		
 	}
+	
+	public void checkResolution() {
+		System.out.println("Pit at (1, 2): " + r.checkResolution(this, intern("P1,2")));
+	}
+	
 	public void checkModels() {
 		Negation not = new Negation(intern("P1,2"));
 		System.out.println("KB entails P1,2: " + prove.entails(this, intern("P1,2")));

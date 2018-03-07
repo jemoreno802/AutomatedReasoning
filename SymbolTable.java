@@ -8,7 +8,7 @@ import java.util.Map;
  */
 public class SymbolTable {
 	
-	protected Map<String,Symbol> symbols = new HashMap<>();
+	protected Map<String,Symbol> symbols = new HashMap();
 	
 	/**
 	 * Returns the PropositionSymbol with the given NAME, creating one

@@ -3,8 +3,9 @@ import java.util.Collection;
 
 
 public class ModusPonensKB extends KB{
-	//ModelChecking check = new ModelChecking();
 	Prover prove = new Prover();
+	ResolutionProof r = new ResolutionProof();
+
 	
 	public ModusPonensKB() {
 		super();
@@ -13,6 +14,10 @@ public class ModusPonensKB extends KB{
 		
 		add(P);
 		add(new Implication(P,Q));
+	}
+	
+	public void checkResolution() {
+		System.out.println("KB entails Q: " + r.checkResolution(this, intern("Q")));
 	}
 	
 	public void checkModels() {

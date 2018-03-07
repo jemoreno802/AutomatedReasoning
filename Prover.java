@@ -3,29 +3,11 @@ import java.util.Collection;
 import java.util.List;
 
 public class Prover {
-	//print TT 
-	/*for(Symbol s :m.model.keySet()) {
-	if(m.model.get(s) == true) {
-		System.out.print(  m.model.get(s) + "  | ");
-
-	}else {
-		System.out.print(  m.model.get(s) + " | ");
-
-	}
-}System.out.println();
-*/
 	
 	public boolean entails(KB kb, Sentence alpha) {
-		//Collection<Symbol> symbols = kb.symbols();
 		List<Symbol> symbols = new ArrayList<Symbol>(); 
 		symbols.addAll(kb.symbols());
 		Model empty = new ModelChecking();
-		System.out.print(" ");
-		for(Symbol s : symbols) {
-		//	System.out.print(s.name + "    |  ");
-		}
-		System.out.println();
-		//System.out.println("______________");
 		return checkAll(kb, alpha, symbols, empty);
 	}
 

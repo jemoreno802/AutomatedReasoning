@@ -15,7 +15,7 @@ public class main {
 			System.out.println("Enter 3 to test Horn Clauses");
 			System.out.println("Enter 4 to test Liars and Truth Tellers");
 			System.out.println("Enter 5 to test More Liars and Truth Tellers");
-			System.out.println("Enter 6 to test Part 2 (Resolution)");
+			//System.out.println("Enter 6 to test Part 2 (Resolution)");
 			answer = scan.nextInt();
 			
 			if(answer == 1) {
@@ -32,15 +32,34 @@ public class main {
 			}if(answer == 5) {
 				new LiarsKB(3).checkModels(3);
 			}
-			if(answer == 6) {
-				System.out.println("Testing resolution");
-				System.out.println("Enter 0 to exit");
-				System.out.println("Enter 1 to test Modus Ponens");
-				System.out.println("Enter 2 to test Wumpus World");
-				System.out.println("Enter 3 to test Horn Clauses");
-			}
 
 		}
+		answer = 1;
+		while(answer !=0) {
+			System.out.println();
+			System.out.println("Testing resolution");
+			System.out.println("Enter 0 to exit");
+			System.out.println("Enter 1 to test Modus Ponens");
+			System.out.println("Enter 2 to test Wumpus World");
+			System.out.println("Enter 3 to test Horn Clauses");
+			System.out.println("Enter 4 to test Liars and Truth Tellers");
+			System.out.println("Enter 5 to test More Liars and Truth Tellers");
+			answer = scan.nextInt();
+			if(answer == 1) {
+				new ModusPonensKB().checkResolution();
+			}if(answer == 2) {
+				new WumpusWorldKB().checkResolution();
+			}if(answer == 3) {
+				new HornClausesKB().checkResolution();
+			}if(answer==4) {
+				System.out.println("Part a: ");
+				new LiarsKB(1).checkResolution(1);
+				System.out.println("Part b: ");
+				new LiarsKB(2).checkResolution(2);
+			}if(answer == 5) {
+				new LiarsKB(3).checkResolution(3);
+			}
+			}
 		System.out.println("Goodbye!");
 		
 	}
